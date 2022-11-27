@@ -1,0 +1,118 @@
+.resume {
+    padding: 120px 120px 50px;
+
+    @media screen and (max-width:1200px) {
+        padding: 120px 0 50px;
+    }
+
+    .divider {
+        margin: 25px auto 0 auto;
+    }
+
+    &__wrapper {
+        padding: 60px 65px;
+        display: grid;
+        grid-template-columns: repeat(2, 425px);
+        column-gap: 135px;
+
+        @media screen and (max-width:1200px) {
+            padding: 60px 0;
+            column-gap: 85px;
+        }
+
+        @media screen and (max-width:992px) {
+            grid-template-columns: repeat(2, 305px);
+            padding-bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            row-gap: 45px;
+        }
+    }
+
+    &__column {
+        &-title {
+            position: relative;
+            padding-left: 35px;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: $main-color;
+                border-radius: 50%;
+                left: 0;
+                top: calc(50% - 7.5px);
+            }
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: calc(100% + 16px);
+                    top: -16px;
+                    left: 7px;
+                    background-color: #000;
+                }
+            }
+        }
+    }
+
+    &__item {
+
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 38px;
+            background-color: #000;
+            left: 8px;
+            top: 45px;
+        }
+
+        &-head {
+            position: relative;
+            padding: 25px 0 0 99px;
+
+            h4 {
+                margin-bottom: 0;
+            }
+        }
+
+        &-body {
+            padding: 12px 0 0 43px;
+            font-size: 12px;
+            line-height: 1.5;
+
+            @media screen and (max-width: 768px) {
+                padding-left: 30px;
+            }
+        }
+
+        &-icon {
+            position: absolute;
+            top: 35px;
+            left: 45px;
+            @include before_circle;
+
+            img {
+                padding-left: 14px;
+                padding-top: 5px;
+            }
+        }
+
+        &-info {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.skills {
+
+    padding-bottom: 50px;
+
+    .divider {
+        margin: 25px auto 0 auto;
+    }
+
+    &__wrapper {
+        padding-top: 50px;
+        display: grid;
+        column-gap: 25px;
+        row-gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+        @media screen and (max-width:992px) {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        @media screen and (max-width: 576px) {
+            grid-template-columns: repeat(auto-fill, minmax(135px, 2fr));
+            column-gap: 15px;
+        }
+    }
+
+    &-item {
+        width: 100%;
+
+        &-img-wrap {
+
+            height: 65px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-height: 65px;
+                max-width: 100%;
+                object-fit: contain;
+                padding: 5px;
+            }
+        }
+
+        h4 {
+            padding-top: 20px;
+            text-align: center;
+        }
+    }
+
+    &__progress-wrap {
+        padding-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(3, 350px);
+        column-gap: 45px;
+        row-gap: 50px;
+        grid-auto-rows: repeat(3, 350px);
+
+        /* @media screen and (max-width:1300px) {
+            grid-template-columns: repeat(3, 285px);
+        } */
+
+        @media screen and (max-width:1300px) {
+            grid-template-columns: repeat(3, 285px);
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 992px) {
+            grid-template-columns: repeat(2,335px);
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2,250px);
+        }
+
+        @media screen and (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+        
+    }
+
+    &__progress-item {
+        &-heading {
+            display: flex;
+            justify-content: space-between;
+
+            h4 {
+                position: relative;
+                padding-bottom: 20px;
+                padding-left: 15px;
+                @include before_circle;
+
+                &:before {
+                    top: -14%;
+                }
+            }
+        }
+
+        &-procents {
+            position: relative;
+
+            .progress-wrapp {
+                width: 350px;
+                height: 14px;
+                background: #E8E4DE;
+                border-radius: 4px; 
+
+                @media screen and (max-width: 1300px) {
+                    width: 285px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    width: 335px;
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 250px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    width: 100%;
+                }
+            }
+
+            .progress-actual {
+                position: absolute;
+                height: 14px;
+                width: 70%;
+                background: #FFA501;
+                border-radius: 4px;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}

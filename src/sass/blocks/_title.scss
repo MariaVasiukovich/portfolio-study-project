@@ -1,0 +1,53 @@
+.title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.66;
+
+    &_fz14 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    &_fz16 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    &_fz20 {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    &_fz36 {
+        font-size: 36px;
+        line-height: 1.5;
+
+        @media screen and (max-width:768px) {
+            font-size: 28px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 24px;
+        }
+    }
+
+    &_fz48 {
+        font-size: clamp(28px, 48/1200*100vw, 48px);
+        line-height: 1.25;
+    }
+
+    &__title {
+        text-align: center;
+        position: relative;
+        @include before_circle;
+
+        &:before {
+            top: -6px;
+            left: calc(50% - 18px);
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+    }
+}
